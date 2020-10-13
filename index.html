@@ -17,18 +17,21 @@
     <body>
         <div id="main">
             <div id="error">SORRY(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)-MYLOVE(<a href="http://firefox.com.cn/download/">Firefox</a>)JAANU</div>
-            <audio autoplay="autoplay" height="100" width="100"> 
+            <!-- <audio autoplay="autoplay" height="100" width="100"> 
                     <source src="./hello.mp3" type="audio/mp3" />
-                    <!-- <embed height="100" width="100" src="./hello.mp3" /> -->
-           </audio> 
-           <audio id="myautoload" autoplay>
-            <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
-            </audio>
+                    <embed height="100" width="100" src="./hello.mp3" /> 
+           </audio>  -->
+           <audio src="hello.mp3" id="player" loop>Get an HTML5 browser!</audio>
+                <form id="interface">
+                <input type="button" value="Play" onclick="PlayPause()" id="playpause" />
+            </form>
+
+            
             
             
             <div id="wrap">
                 <div id="text">
-                    <div id="code"> <font color="#FF0000"> <span class="say">MY LOVE</span><br>
+                    <div id="code"> <fontcolor="#FF0000"> <span class="say">MY LOVE</span><br>
                       <span class="say">JAANU</span><br>
                       <span class="say">SORRY</span><br>
                       <span class="say">FOR MESSING UP THE THINGS SOMETIMES</span><br>             
@@ -57,8 +60,19 @@
         </div>
     
     <script>
+        var audioPlayer = document.getElementById("player");
+
+function PlayPause() {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    document.getElementById("playpause").value = "Pause";
+  } else {
+    audioPlayer.pause();
+    document.getElementById("playpause").value = "Play";
+  }
+}
+
     </script>
-<script> document.getElementById('myautoload').play(); </script>
     <script>
     (function(){
         var canvas = $('#canvas');
